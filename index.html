@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>คำนวณภาษีมูลค่าเพิ่ม (VAT)</title>
+</head>
+<body>
+    <h1>คำนวณภาษีมูลค่าเพิ่ม (VAT)</h1>
+    <p>ป้อนราคาสินค้า: <input type="number" id="price"></p>
+    <button onclick="calculateVat()">คำนวณ</button>
+    <p>ภาษีมูลค่าเพิ่ม: <span id="vatAmount"></span></p>
+    <p>ราคาสินค้ารวมภาษีมูลค่าเพิ่ม: <span id="totalPrice"></span></p>
+
+    <script>
+        function calculateVat() {
+            var price = parseFloat(document.getElementById("price").value);
+            var vatRate = 7;
+            var totalVat = price * vatRate / 100;
+            var totalPrice = price + totalVat;
+
+            document.getElementById("vatAmount").innerHTML = totalVat.toFixed(2);
+            document.getElementById("totalPrice").innerHTML = totalPrice.toFixed(2);
+        }
+    </script>
+</body>
+</html>
